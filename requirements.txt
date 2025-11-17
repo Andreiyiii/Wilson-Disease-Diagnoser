@@ -3,3 +3,4 @@ pandas
 numpy
 ipykernel
 scikit-learn
+xgboost
