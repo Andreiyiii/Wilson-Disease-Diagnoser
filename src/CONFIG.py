@@ -7,5 +7,5 @@ XGB_PARAMETERS={
     "learning_rate":0.05,
     "n_estimators":400,
     "random_state":1,
-    "eval_metric":"logloss"
+    "eval_metric":"logloss",
 }
