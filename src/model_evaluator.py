@@ -12,3 +12,5 @@ def evaluate_model(model,X_test,y_test):
     #since we are talking about a rare disease detection ,using the accuracy_score function would
     #not work because the dataset is mostly consisting of healthy examples therefore it could just
     #predict everyone is healthy and still get a decent accuracy
+
+    #

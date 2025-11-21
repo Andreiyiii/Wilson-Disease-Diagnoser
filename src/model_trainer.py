@@ -1,6 +1,6 @@
 from xgboost import XGBClassifier
-from src.data import load_dataset,split_data
-from src.CONFIG import XGB_PARAMETERS
+from data import load_dataset,split_data
+from CONFIG import XGB_PARAMETERS
 import joblib
 
 def train_model():
