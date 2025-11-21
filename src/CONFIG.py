@@ -8,4 +8,5 @@ XGB_PARAMETERS={
     "n_estimators":400,
     "random_state":1,
     "eval_metric":"logloss",
+    "scale_pos_weight": 2,
 }
