@@ -13,7 +13,6 @@ model = load_model()
 st.title("Wilson Disease Diagnoser")
 st.write("Introduceți analizele pentru evaluare:")
 
-age = st.number_input("Age", 0, 120, 30)
 cerulo = st.number_input("Ceruloplasmin Level", 0.0, 60.0, 10.0)
 copper_serum = st.number_input("Copper in Blood Serum", 0.0, 1000.0, 100.0)
 free_copper = st.number_input("Free Copper in Blood Serum", 0.0, 200.0, 20.0)
@@ -46,7 +45,6 @@ Alcohol_True = 1 if alcohol == "True" else 0
 
 # Build dataframe EXACT în ordinea din model
 input_df = pd.DataFrame([{
-    "Age": age,
     "Ceruloplasmin Level": cerulo,
     "Copper in Blood Serum": copper_serum,
     "Free Copper in Blood Serum": free_copper,
