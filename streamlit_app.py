@@ -4,6 +4,7 @@ import pickle
 import numpy as np
 from src.shap import shap_plot
 
+
 @st.cache_resource
 def load_model():
     with open("models/xgb_model.pkl", "rb") as f:
@@ -72,11 +73,6 @@ st.write("### Date introduse")
 st.dataframe(input_df)
 
 
-if st.button("Arată explicația SHAP"):
-    st.subheader("Explicația modelului (SHAP)")
-    shap_plot(model, input_df)
-
-
 
 if st.button("Predict"):
     prediction = model.predict(input_df)[0]
@@ -87,3 +83,9 @@ if st.button("Predict"):
         st.error(f"❗ Probabilitate mare de Wilson Disease ({prob:.2f})")
     else:
         st.success(f"✔ Probabilitate scăzută de Wilson Disease ({prob:.2f})")
+
+
+    st.subheader("Interpretabilitate Model (SHAP)")
+    with st.spinner("Se calculează importanța factorilor..."):
+        fig = shap_plot(model, input_df)
+        st.pyplot(fig)

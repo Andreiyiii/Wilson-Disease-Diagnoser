@@ -7,5 +7,5 @@ def shap_plot(model, X):
     shap_values = explainer(X)
 
     fig = plt.figure()
-    shap.plots.beeswarm(shap_values, show=False)
-    st.pyplot(fig)
+    shap.summary_plot(shap_values,X, show=False)
+    return fig
