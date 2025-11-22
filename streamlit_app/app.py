@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import pickle
 import numpy as np
+from src.shap import shap_plot
 
 @st.cache_resource
 def load_model():
@@ -69,6 +70,13 @@ input_df = pd.DataFrame([{
 
 st.write("### Date introduse")
 st.dataframe(input_df)
+
+
+if st.button("Arată explicația SHAP"):
+    st.subheader("Explicația modelului (SHAP)")
+    shap_plot(model, input_df)
+
+
 
 if st.button("Predict"):
     prediction = model.predict(input_df)[0]

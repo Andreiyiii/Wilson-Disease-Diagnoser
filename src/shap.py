@@ -1,9 +1,11 @@
 import shap
 import matplotlib.pyplot as plt
+import streamlit as st
 
-def explain(model,sample):
-    explainer=shap.TreeExplainer(model)
-    shap_values=explainer(sample)
-    shap.summary_plot(shap_values, sample,show=False)
+def shap_plot(model, X):
+    explainer = shap.Explainer(model)
+    shap_values = explainer(X)
 
-    plt.show()
+    fig = plt.figure()
+    shap.plots.beeswarm(shap_values, show=False)
+    st.pyplot(fig)
