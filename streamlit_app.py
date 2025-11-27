@@ -40,6 +40,7 @@ if model_type == "Model Simplu":
     albumin = st.number_input("Albumin", 0.0, 10.0, 4.5)
     alp = st.number_input("Alkaline Phosphatase (ALP)", 0.0, 500.0, 90.0)
     inr = st.number_input("Prothrombin Time / INR", 0.0, 10.0, 1.1)
+    ggt = st.number_input("Gamma-Glutamyl Transferase (GGT)",0.0, 5.0 , 20)
 
     psych = st.number_input("Psychiatric Symptoms (0 = no, 1 = yes)", 0, 1, 0)
     family = st.number_input("Family History (0 = no, 1 = yes)", 0, 1, 0)
@@ -63,6 +64,7 @@ if model_type == "Model Simplu":
         "Albumin": albumin,
         "Alkaline Phosphatase (ALP)": alp,
         "Prothrombin Time / INR": inr,
+        "Gamma-Glutamyl Transferase (GGT)":ggt,
         "Psychiatric Symptoms": psych,
         "Family History": family,
         "BMI": bmi,
@@ -150,7 +152,10 @@ if st.button("Predict"):
 
     st.subheader("Rezultat:")
     if prediction == 1:
-        st.error(f"❗ Probabilitate mare de Wilson Disease ({prob:.2f})")
+        if model_type =="Model Simplu":
+            st.error(f"❗ Ar trebui sa faci testari ulterioare ({prob:.2f})")
+        else:
+            st.error(f"❗ Probabilitate mare de Wilson Disease ({prob:.2f})")
     else:
         st.success(f"✔ Probabilitate scăzută de Wilson Disease ({prob:.2f})")
 
