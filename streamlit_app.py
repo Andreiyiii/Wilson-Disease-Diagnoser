@@ -35,11 +35,11 @@ model_type = st.selectbox(
 st.subheader("Performanta modelului selectat:")
 
 if model_type == "Model Simplu":
-    st.write(f"**AUC:** {AUC_SIMPLE:.4f}")
-    st.write(f"**Recall:** {RECALL_SIMPLE:.4f}")
+    st.write(f"**AUC:** {AUC_SIMPLE:.5f}")
+    st.write(f"**Recall:** {RECALL_SIMPLE:.5f}")
 else:
-    st.write(f"**AUC:** {AUC_ADVANCED:.4f}")
-    st.write(f"**Recall:** {RECALL_ADVANCED:.4f}")
+    st.write(f"**AUC:** {AUC_ADVANCED:.5f}")
+    st.write(f"**Recall:** {RECALL_ADVANCED:.5f}")
 
 
 
