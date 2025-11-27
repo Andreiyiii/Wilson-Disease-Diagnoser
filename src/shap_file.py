@@ -8,5 +8,4 @@ def shap_plot(model, X):
 
     fig = plt.figure()
     shap.summary_plot(shap_values,X, show=False)
-    fig = plt.gcf()
     return fig
