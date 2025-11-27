@@ -4,6 +4,11 @@ import pickle
 import numpy as np
 from src.shap_file import shap_plot
 
+AUC_SIMPLE = 0.93864634375
+RECALL_SIMPLE = 0.8405
+
+AUC_ADVANCED = 0.999856
+RECALL_ADVANCED = 0.99275
 
 #load models
 @st.cache_resource
@@ -26,6 +31,15 @@ model_type = st.selectbox(
     "Alege tipul de model:",
     ["Model Simplu", "Model Avansat"]
 )
+
+st.subheader("Performanta modelului selectat:")
+
+if model_type == "Model Simplu":
+    st.write(f"**AUC:** {AUC_SIMPLE:.4f}")
+    st.write(f"**Recall:** {RECALL_SIMPLE:.4f}")
+else:
+    st.write(f"**AUC:** {AUC_ADVANCED:.4f}")
+    st.write(f"**Recall:** {RECALL_ADVANCED:.4f}")
 
 
 
@@ -153,7 +167,7 @@ if st.button("Predict"):
     st.subheader("Rezultat:")
     if prediction == 1:
         if model_type =="Model Simplu":
-            st.error(f"❗ Ar trebui sa faci testari ulterioare ({prob:.2f})")
+            st.error(f"❗ Ar trebui sa faci testari ulterioare ")
         else:
             st.error(f"❗ Probabilitate mare de Wilson Disease ({prob:.2f})")
     else:
