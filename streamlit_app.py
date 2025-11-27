@@ -32,16 +32,44 @@ model_type = st.selectbox(
 #simple
 if model_type == "Model Simplu":
 
-    st.subheader("Date necesare pentru modelul simplu")
-    
-    cerulo = st.number_input("Ceruloplasmin Level", 0.0, 60.0, 40.0)
-    copper_serum = st.number_input("Copper in Blood Serum", 0.0, 1000.0, 105.0)
-    copper_urine = st.number_input("Copper in Urine", 0.0, 300.0, 20.0)
+    st.subheader("Date necesare pentru modelul simplu (routine tests)")
 
+    alt = st.number_input("ALT", 0.0, 1000.0, 25.0)
+    ast = st.number_input("AST", 0.0, 1000.0, 25.0)
+    total_bil = st.number_input("Total Bilirubin", 0.0, 20.0, 0.8)
+    albumin = st.number_input("Albumin", 0.0, 10.0, 4.5)
+    alp = st.number_input("Alkaline Phosphatase (ALP)", 0.0, 500.0, 90.0)
+    inr = st.number_input("Prothrombin Time / INR", 0.0, 10.0, 1.1)
+
+    psych = st.number_input("Psychiatric Symptoms (0 = no, 1 = yes)", 0, 1, 0)
+    family = st.number_input("Family History (0 = no, 1 = yes)", 0, 1, 0)
+
+    bmi = st.number_input("BMI", 0.0, 60.0, 22.0)
+
+    sex = st.selectbox("Sex", ["Female", "Male"])
+    alcohol = st.selectbox("Alcohol Use", ["False", "True"])
+
+    # One-hot encoding
+    Sex_Female = 1 if sex == "Female" else 0
+    Sex_Male = 1 if sex == "Male" else 0
+    Alcohol_False = 1 if alcohol == "False" else 0
+    Alcohol_True = 1 if alcohol == "True" else 0
+
+    # DataFrame final pentru modelul simplu
     input_df = pd.DataFrame([{
-        "Ceruloplasmin Level": cerulo,
-        "Copper in Blood Serum": copper_serum,
-        "Copper in Urine": copper_urine
+        "ALT": alt,
+        "AST": ast,
+        "Total Bilirubin": total_bil,
+        "Albumin": albumin,
+        "Alkaline Phosphatase (ALP)": alp,
+        "Prothrombin Time / INR": inr,
+        "Psychiatric Symptoms": psych,
+        "Family History": family,
+        "BMI": bmi,
+        "Sex_Female": Sex_Female,
+        "Sex_Male": Sex_Male,
+        "Alcohol Use_False": Alcohol_False,
+        "Alcohol Use_True": Alcohol_True,
     }])
 
     model = load_simple_model()
