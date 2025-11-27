@@ -1,4 +1,5 @@
-DATA_PATH="data/Wilson_disease_dataset.csv"
+DATA_PATH_EXTENDED="data/Wilson_disease_dataset.csv"
+DATA_PATH_SIMPLE="data/Wilson_disease_dataset_simplified.csv"
 DIAGNOSIS="Is_Wilson_Disease"
 XGB_PARAMETERS={
     "max_depth":3,

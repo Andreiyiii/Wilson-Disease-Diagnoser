@@ -3,7 +3,8 @@ def evaluate_model(model,X_test,y_test):
 
     prediction = model.predict(X_test)
     prediction=model.predict(X_test)
-    probability=model.predict_proba(X_test)[:,1] #chance to have the disease since it returns 2 columns,one for false and one for true
+    probability=model.predict_proba(X_test)[:,1] 
+    #chance to have the disease since it returns 2 columns,one for false and one for true
     # print("Predictions:", prediction)
     # print("True Labels:", y_test.values)
 

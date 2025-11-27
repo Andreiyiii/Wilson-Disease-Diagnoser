@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import pickle
 import numpy as np
-from src.shap import shap_plot
+from src.shap_file import shap_plot
 
 
 #load models
@@ -13,7 +13,7 @@ def load_simple_model():
 
 @st.cache_resource
 def load_advanced_model():
-    with open("models/xgb_model.pkl", "rb") as f:
+    with open("models/advanced_model.pkl", "rb") as f:
         return pickle.load(f)
 
 

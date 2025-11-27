@@ -1,10 +1,14 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from CONFIG import DATA_PATH,DIAGNOSIS
+from CONFIG import DATA_PATH_EXTENDED,DATA_PATH_SIMPLE,DIAGNOSIS
 
 
-def load_dataset():
-    df=pd.read_csv(DATA_PATH)
+def load_dataset_extended():
+    df=pd.read_csv(DATA_PATH_EXTENDED)
+    return df
+
+def load_dataset_simple():
+    df=pd.read_csv(DATA_PATH_SIMPLE)
     return df
 
 
