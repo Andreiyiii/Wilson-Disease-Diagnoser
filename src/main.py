@@ -1,15 +1,18 @@
 import pandas as pd
 import numpy as np
-from model_trainer import train_model_extended
+from model_trainer import train_model_extended,train_model_simple
 from model_evaluator import evaluate_model
 from shap_file import shap_plot
 
 
 def main():
-    model,X_test,y_test=train_model_extended()
-    evaluate_model(model,X_test,y_test)
-    shap_plot(model,X_test)
+    model_extended,X_test,y_test=train_model_extended()
+    evaluate_model(model_extended,X_test,y_test)
+    shap_plot(model_extended,X_test)
 
+    model_simple,X_test,y_test=train_model_simple()
+    evaluate_model(model_simple,X_test,y_test)
+    shap_plot(model_simple,X_test)
 
 if __name__ == "__main__":
     main()

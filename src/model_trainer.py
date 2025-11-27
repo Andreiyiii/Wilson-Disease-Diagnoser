@@ -33,7 +33,7 @@ def train_model_simple():
         X_train,X_test,y_train,y_test=split_data(df)
         return model, X_test, y_test
     
-    df=load_dataset_extended()
+    df=load_dataset_simple()
     X_train,X_test,y_train,y_test=split_data(df)
 
     # print(X_train.shape, X_test.shape)
