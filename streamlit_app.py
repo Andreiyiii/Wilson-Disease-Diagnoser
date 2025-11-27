@@ -12,8 +12,8 @@ def load_simple_model():
         return pickle.load(f)
 
 @st.cache_resource
-def load_advanced_model():
-    with open("models/advanced_model.pkl", "rb") as f:
+def load_extended_model():
+    with open("models/extended_model.pkl", "rb") as f:
         return pickle.load(f)
 
 
@@ -106,7 +106,7 @@ else:
         "Alcohol Use_True": Alcohol_True
     }])
 
-    model = load_advanced_model()
+    model = load_extended_model()
 
 
 
