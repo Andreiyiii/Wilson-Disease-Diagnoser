@@ -44,7 +44,7 @@ You can select the Simple Model or the Extended Model,introduce the values then 
 ## Data
 The original dataset is taken from [Kaggle](https://www.kaggle.com/datasets/guldanikaosmonova/wilson-disease-dataset/data)
 
-Furthermore,I removed labels that were almost perfectly correlated with `Is_Wilson_Disease` tag such as `ATB7B Gene Mutation` and also removed useless ones like name and `Socioeconomic Status`.
+Furthermore,I removed labels that were almost perfectly correlated with `Is_Wilson_Disease` tag such as `ATB7B Gene Mutation` and also removed useless ones like `Name` and `Socioeconomic Status`.
 
 - `Wilson_disease_dataset.csv` – dataset used for extended model 
 - `Wilson_disease_dataset_simple.csv` – subset of Wilson_disease_dataset based on routine tests.
