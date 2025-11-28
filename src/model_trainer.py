@@ -1,6 +1,6 @@
 from xgboost import XGBClassifier
-from data import load_dataset_extended,load_dataset_simple,split_data
-from CONFIG import XGB_PARAMETERS
+from src.data import load_dataset_extended,load_dataset_simple,split_data
+from src.CONFIG import XGB_PARAMETERS
 import joblib
 import os
 

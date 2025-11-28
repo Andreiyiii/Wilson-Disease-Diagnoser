@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
-from model_trainer import train_model_extended,train_model_simple
-from model_evaluator import evaluate_model
-from shap_file import shap_plot
+from src.model_trainer import train_model_extended,train_model_simple
+from src.model_evaluator import evaluate_model
+from src.shap_file import shap_plot
 
 
 def main():

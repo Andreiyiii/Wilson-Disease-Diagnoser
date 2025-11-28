@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from CONFIG import DATA_PATH_EXTENDED,DATA_PATH_SIMPLE,DIAGNOSIS
+from src.CONFIG import DATA_PATH_EXTENDED,DATA_PATH_SIMPLE,DIAGNOSIS
 
 
 def load_dataset_extended():
