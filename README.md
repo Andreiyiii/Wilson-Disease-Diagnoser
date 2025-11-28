@@ -3,8 +3,15 @@
 
 Streamlit app that estimated probability of Wilson Disease based on lab tests and symptoms.It includes 2 XGBoost models:
 
-- **Simple Model** – trained on Simple dataset(`data/Wilson_disease_dataset_simple.csv`).
-- **Extended Model** – trained on Extended dataset (`data/Wilson_disease_dataset.csv`).
+- **Simple Model** – trained on the Simple dataset(`data/Wilson_disease_dataset_simple.csv`).  
+Recall:  0.8405
+AUC:  0.93864634375
+
+- **Extended Model** – trained on the Extended dataset (`data/Wilson_disease_dataset.csv`).  
+Recall:  0.99275
+AUC:  0.99985628125  
+
+High scores are expected because several input labels correspond to lab tests ordered upon suspicion of Wilson Disease , thus having a very strong impact on the prediction.
 
 
 ## Installation
@@ -15,12 +22,12 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-## Training models
+## Training the models
 
 ```bash
 python -m src.main
 ```
-Show ROC-AUC and Recall metrics then generate shap graphs
+This also displays ROC-AUC and Recall metrics and generate shap graphs
 
 
 
@@ -30,7 +37,7 @@ Show ROC-AUC and Recall metrics then generate shap graphs
 ```bash
 streamlit run streamlit_app.py
 ```
-U can select the Simple Model or the Extended Model,introduce the values then press Predict.The expended model also shows a **Shap** plot
+You can select the Simple Model or the Extended Model,introduce the values then press Predict.The expended model also shows a **Shap** plot
 
 
 
@@ -41,11 +48,11 @@ Furthermore,I removed labels that were almost perfectly correlated with `Is_Wils
 
 - `Wilson_disease_dataset.csv` – dataset used for extended model 
 - `Wilson_disease_dataset_simple.csv` – subset of Wilson_disease_dataset based on routine tests.
-- `clean_sample.csv` , `clean_sample_simple.csv` – small parts of the complete dataset.
+- `clean_sample.csv` , `clean_sample_simple.csv` – small samples of the complete dataset.
 
 
 
-## Background of synthetic dataset creation
+## Background on synthetic dataset creation
 
 [GITHUB](https://github.com/Guldanika/Wilson-diseasepre-diction_on-mimic-data/blob/main/wilson_disease_detector_new.ipynb)
 
