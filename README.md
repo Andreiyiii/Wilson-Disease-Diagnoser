@@ -11,7 +11,7 @@ AUC:  0.93864634375
 Recall:  0.99275
 AUC:  0.99985628125  
 
-High scores are expected because several input labels correspond to lab tests ordered upon suspicion of Wilson Disease , thus having a very strong impact on the prediction.
+High scores are expected on the `Extended Model` because several input labels correspond to lab tests ordered upon suspicion of Wilson Disease , thus having a very strong impact on the prediction.
 
 
 ## Installation
